@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    TEST
     <Header :navItemsArray="navItemsArray" />
     <Main :iconsArray="iconsArray" />
   </div>
