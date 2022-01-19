@@ -6,6 +6,7 @@
       :programsCourseArray="programsCourseArray"
       :programsPointsArray="programsPointsArray"
       :imagesPopularCourseArray="imagesPopularCourseArray"
+      :logoArray="logoArray"
     />
   </div>
 </template>
@@ -126,6 +127,21 @@ export default {
         // "landing-carousel-gallery-img-4.jpg",
         // "landing-carousel-gallery-img-5.jpg",
         // "landing-carousel-gallery-img-7.jpg",
+      ],
+      // Loghi Main End
+      logoArray: [
+        {
+          img: "h5-client-5.png",
+        },
+        {
+          img: "h5-client-1.png",
+        },
+        {
+          img: "h5-client-2.png",
+        },
+        {
+          img: "h5-client-1.png",
+        },
       ],
     };
   },

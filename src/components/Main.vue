@@ -168,6 +168,20 @@
 
     <!-- Pricing Table -->
     <PricingTable />
+
+    <!-- Logos Row -->
+    <div class="my_container">
+      <div class="container_logo">
+        <div class="my_logo">
+          <div v-for="(logo, index) in logoArray" :key="index">
+            <img
+              :src="require(`../assets/img/${logo.img}`)"
+              alt="University Logo"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -180,6 +194,7 @@ export default {
     programsCourseArray: Array,
     programsPointsArray: Array,
     imagesPopularCourseArray: Array,
+    logoArray: Array,
   },
   components: {
     PricingTable,
@@ -348,6 +363,17 @@ export default {
     border-radius: 50%;
     margin: 70px 5px;
     background-color: $my_secondary_color;
+  }
+}
+// Logos Row
+.container_logo {
+  position: relative;
+  .my_logo {
+    height: 300px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 </style>
