@@ -5,6 +5,7 @@
       :iconsArray="iconsArray"
       :programsCourseArray="programsCourseArray"
       :programsPointsArray="programsPointsArray"
+      :imagesPopularCourseArray="imagesPopularCourseArray"
     />
   </div>
 </template>
@@ -21,7 +22,7 @@ export default {
   },
   data() {
     return {
-      // Elementi del header top
+      // Elementi del navbar in header top
       navItemsArray: [
         {
           text: "Home",
@@ -116,6 +117,15 @@ export default {
         {
           point: "People thach. People learn. This is where they connect.",
         },
+      ],
+      // Immagini di Popular Course
+      imagesPopularCourseArray: [
+        "landing-carousel-gallery-img-1.jpg",
+        "landing-carousel-gallery-img-2.jpg",
+        "landing-carousel-gallery-img-3.jpg",
+        // "landing-carousel-gallery-img-4.jpg",
+        // "landing-carousel-gallery-img-5.jpg",
+        // "landing-carousel-gallery-img-7.jpg",
       ],
     };
   },

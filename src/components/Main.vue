@@ -81,7 +81,7 @@
       </div>
       <div class="reviewer_name">Joan Collins</div>
       <div class="reviewer_class">STUDENT</div>
-      <div class="review_zone_bottom">
+      <div class="zone_bottom">
         <div v-for="n in 3" :key="n" class="my_circle">
           <div class="my_pointer"></div>
         </div>
@@ -132,17 +132,50 @@
         </div>
       </div>
     </div>
+
+    <!-- Popular Course -->
+    <div class="popular_course_section">
+      <div class="my_container">
+        <div class="text-center w-50 m-auto pt-5">
+          <h2>Popular Online Course</h2>
+          <p class="pt-5">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
+            assumenda, non ducimus hic, similique voluptate illum totam vero
+            saepe earum repellat modi cum repudiandae est numquam nemo dolorum
+            eligendi repellendus.
+          </p>
+        </div>
+        <div class="images_course_container">
+          <div
+            class="image_course"
+            v-for="(image, index) in imagesPopularCourseArray"
+            :key="index"
+          >
+            <img :src="require('../assets/img/' + image)" alt="Course Image" />
+          </div>
+        </div>
+      </div>
+      <div class="zone_bottom">
+        <div v-for="n in 3" :key="n" class="my_circle_special">
+          <div class="my_pointer"></div>
+        </div>
+      </div>
+      <div class="top_page">
+        <i class="fas fa-angle-up"></i>
+        top
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-// import icons from '../data/icons.js'
 export default {
   name: "Main",
   props: {
     iconsArray: Array,
     programsCourseArray: Array,
     programsPointsArray: Array,
+    imagesPopularCourseArray: Array,
   },
   data() {
     return {};
@@ -224,11 +257,6 @@ export default {
     width: 50%;
     margin: 30px auto;
   }
-  .review_zone_bottom {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-  }
 }
 // Programs of course
 .programs {
@@ -287,6 +315,32 @@ export default {
     width: 150px;
     bottom: 40%;
     right: 5%;
+  }
+}
+// Popular Course
+.popular_course_section {
+  border-top: 2px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  background-image: url("../assets/img/background-pattern.jpg");
+  height: 1200px;
+  position: relative;
+  .images_course_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px;
+    padding-right: 20px;
+    .image_course {
+      width: 300px;
+      height: 400px;
+      background-color: pink;
+    }
+  }
+  .my_circle_special {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 70px 5px;
+    background-color: $my_secondary_color;
   }
 }
 </style>
