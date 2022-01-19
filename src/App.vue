@@ -8,18 +8,25 @@
       :imagesPopularCourseArray="imagesPopularCourseArray"
       :logoArray="logoArray"
     />
+    <Footer
+      :menu1links="menu1links"
+      :menu2links="menu2links"
+      :menu3links="menu3links"
+    />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Header,
     Main,
+    Footer,
   },
   data() {
     return {
@@ -141,6 +148,52 @@ export default {
         },
         {
           img: "h5-client-1.png",
+        },
+      ],
+      // Elementi del Footer
+      menu1links: [
+        {
+          txt: "Providing Life Changing",
+          txt1: "Experiences Through",
+          txt2: "Education Class That Fit your",
+          txt3: "Busy Life. Closer to Home",
+        },
+        {
+          txt: "1-677-124-44227",
+        },
+        {
+          txt: "Mon - Sat 8.00 - 18:00",
+        },
+      ],
+      menu2links: [
+        {
+          txt: "Business English",
+          name: "Preston Marshall",
+        },
+        {
+          txt: "Social Computing",
+          name: "David Sanders",
+        },
+        {
+          txt: "Learn Spanish",
+          name: "Jennie King",
+        },
+      ],
+      menu3links: [
+        {
+          txt: "User dashboard",
+        },
+        {
+          txt: "Contact Us",
+        },
+        {
+          txt: "FAQ",
+        },
+        {
+          txt: "Course Offer",
+        },
+        {
+          txt: "Events",
         },
       ],
     };
