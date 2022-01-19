@@ -165,10 +165,14 @@
         top
       </div>
     </div>
+
+    <!-- Pricing Table -->
+    <PricingTable />
   </section>
 </template>
 
 <script>
+import PricingTable from "./PricingTable.vue";
 export default {
   name: "Main",
   props: {
@@ -177,8 +181,8 @@ export default {
     programsPointsArray: Array,
     imagesPopularCourseArray: Array,
   },
-  data() {
-    return {};
+  components: {
+    PricingTable,
   },
 };
 </script>
@@ -266,6 +270,9 @@ export default {
   display: flex;
   justify-content: space-between;
   position: relative;
+  ul {
+    padding-left: 0;
+  }
   .cells {
     width: 40%;
     height: 100%;
@@ -312,7 +319,7 @@ export default {
   }
   .icona {
     position: absolute;
-    width: 150px;
+    width: 120px;
     bottom: 40%;
     right: 5%;
   }
