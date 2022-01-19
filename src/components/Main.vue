@@ -1,5 +1,6 @@
 <template>
   <section>
+    <!--First Row Card -->
     <div class="my_container">
       <div class="container_icons">
         <div v-for="(icon, index) in iconsArray" :key="index" class="my_icons">
@@ -20,25 +21,27 @@
         </p>
         <p class="my_more">LEARN MORE</p>
       </div>
+
       <!-- Primo Jumbotron -->
       <div class="students_image">
-        <img src="../assets/img/h5-img-1.jpg" alt="" />
+        <img src="../assets/img/h5-img-1.jpg" alt="Image of students" />
         <div class="top_page">
           <i class="fas fa-angle-up"></i>
           top
         </div>
       </div>
+
       <!-- Secondo Jumbotron -->
       <div class="globe_image">
         <div class="my_globe">
-          <img src="../assets/img/h5-img-2.jpg" alt="" />
+          <img src="../assets/img/h5-img-2.jpg" alt="Globe image" />
         </div>
         <div class="globe_txt">
-          <h1>
+          <h2>
             Empowering <br />
             Children to Reach <br />
             Their Potential
-          </h1>
+          </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
             accusamus, alias rerum expedita commodi illum consequuntur? Sapiente
@@ -62,6 +65,7 @@
         </div>
       </div>
     </div>
+
     <!-- Terzo Jumbotron -->
     <div class="review_zone">
       <div class="reviewer">
@@ -69,18 +73,62 @@
       </div>
       <div class="review_txt">
         <p>
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
           eum praesentium aliquam molestias voluptas deleniti, suscipit, maxime
           quo nostrum natus rem cum voluptatum repellat eligendi vero cumque.
-          Harum, inventore ex! aliquam molestias voluptas deleniti"
+          Harum, inventore ex! aliquam molestias voluptas deleniti
         </p>
       </div>
       <div class="reviewer_name">Joan Collins</div>
       <div class="reviewer_class">STUDENT</div>
       <div class="review_zone_bottom">
         <div v-for="n in 3" :key="n" class="my_circle">
-          {{ n.my_circle }}
           <div class="my_pointer"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programs of course -->
+    <div class="my_container">
+      <div class="programs">
+        <div class="cells">
+          <div
+            v-for="(program, index) in programsCourseArray"
+            :key="index"
+            class="rows"
+          >
+            <div :class="{ active: program.status }"></div>
+            <p class="program_title">{{ program.title }}</p>
+          </div>
+        </div>
+        <div class="program_description">
+          <h2>Learning Possibilities</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+            accusamus excepturi consequatur vel, amet optio temporibus nobis
+            reiciendis? Laudantium quaerat tempora, id natus quasi possimus esse
+            rem molestias ullam minima. Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Autem consequatur odit repellat accusantium iste
+            modi. Adipisci facere doloremque aliquam debitis magni? Neque ullam
+            molestias mollitia ducimus deserunt eligendi assumenda porro!
+          </p>
+          <ul class="program_points_list">
+            <li v-for="(point, index) in programsPointsArray" :key="index">
+              <i class="fas fa-check"></i>
+              {{ point.point }}
+            </li>
+          </ul>
+          <div class="icona">
+            <img
+              class="w-100"
+              src="../assets/img/h12-tabs-icon-1.png"
+              alt="icon"
+            />
+          </div>
+        </div>
+        <div class="top_page">
+          <i class="fas fa-angle-up"></i>
+          top
         </div>
       </div>
     </div>
@@ -93,19 +141,25 @@ export default {
   name: "Main",
   props: {
     iconsArray: Array,
+    programsCourseArray: Array,
+    programsPointsArray: Array,
+  },
+  data() {
+    return {};
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/variables";
+// Row card
 .container_icons {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 100px;
   .my_icons {
-    background-color: #f2f8fc;
+    background-color: $card_color;
     height: 250px;
     width: 200px;
     display: flex;
@@ -117,10 +171,12 @@ export default {
     }
   }
 }
+// Primo Jumbotron
 .students_image {
   position: relative;
   margin: 80px 0;
 }
+// Secondo Jumbotron
 .globe_image {
   display: flex;
   position: relative;
@@ -152,6 +208,7 @@ export default {
     }
   }
 }
+// Terzo Jumbotron
 .review_zone {
   margin: 80px 0;
   text-align: center;
@@ -171,6 +228,65 @@ export default {
     display: flex;
     justify-content: center;
     margin-top: 100px;
+  }
+}
+// Programs of course
+.programs {
+  width: 95%;
+  height: 700px;
+  margin: 100px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  .cells {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .rows {
+      width: 60%;
+      height: 100px;
+      border: 3px solid $grid_color;
+      display: flex;
+      align-items: center;
+      :hover,
+      .active {
+        color: $my_secondary_color;
+        border-left: 10px solid $my_secondary_color;
+        height: 100%;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .program_title {
+        padding-left: 30px;
+        font-weight: bold;
+        color: $main_txt_color;
+        font-size: 20px;
+      }
+    }
+  }
+  .program_description {
+    width: 60%;
+    height: 100%;
+    margin: 100px 0;
+    position: relative;
+    .program_points_list {
+      margin-top: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      .fa-check {
+        font-size: 15px;
+        color: $my_secondary_color;
+      }
+    }
+  }
+  .icona {
+    position: absolute;
+    width: 150px;
+    bottom: 40%;
+    right: 5%;
   }
 }
 </style>

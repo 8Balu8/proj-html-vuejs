@@ -1,47 +1,49 @@
 <template>
   <header>
-    <template>
-      <div class="bg_Header">
-        <!-- Header top Navbar -->
-        <div class="my_container header_top">
-          <div class="logo">
-            <img src="../assets/img/logo-light.png" alt="iAcademy Logo" />
-          </div>
-          <div class="nav_items">
-            <div class="item" v-for="(items, i) in navItemsArray" :key="i">
-              <a :href="`${items.url}`">{{ items.text }}</a>
-            </div>
-          </div>
-          <div class="nav_icons">
-            <i class="fas fa-search"></i>
-            <i class="far fa-clipboard">
-              <div class="counter">0</div>
-            </i>
-            <i class="fas fa-bars"></i>
+    <!-- Header Slider -->
+    <div class="bg_Header" :style="bgImage">
+      <!--Header top Navbar -->
+      <div class="my_container header_top">
+        <div class="logo">
+          <img src="../assets/img/logo-light.png" alt="iAcademy Logo" />
+        </div>
+        <div class="nav_items">
+          <div class="item" v-for="(items, i) in navItemsArray" :key="i">
+            <a :href="`${items.url}`">{{ items.text }}</a>
           </div>
         </div>
-        <!-- Header Center Call to action -->
-        <div class="header_center">
-          <h1>Contemporary Ideas</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            quis natus totam veniam, commodi dolorum inventore, deleniti quasi
-            laborum obcaecati blanditiis libero voluptatem error aut repudiandae
-            facilis architecto ex? Blanditiis?
-          </p>
-          <div>
-            <button class="my_btn">Register Now</button>
-          </div>
-        </div>
-        <!-- Header bottom circle for number page -->
-        <div class="header_bottom">
-          <div v-for="n in 3" :key="n" class="my_circle">
-            {{ n.my_circle }}
-            <div class="my_pointer"></div>
-          </div>
+        <div class="nav_icons">
+          <i class="fas fa-search"></i>
+          <i class="far fa-clipboard">
+            <div class="counter">0</div>
+          </i>
+          <i class="fas fa-bars"></i>
         </div>
       </div>
-    </template>
+      <!-- Header Center Call to action -->
+      <div class="header_center">
+        <h1>Contemporary Ideas</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          quis natus totam veniam, commodi dolorum inventore, deleniti quasi
+          laborum obcaecati blanditiis libero voluptatem error aut repudiandae
+          facilis architecto ex? Blanditiis?
+        </p>
+        <div>
+          <button class="my_btn">Register Now</button>
+        </div>
+      </div>
+      <!-- Header bottom circle for number page -->
+      <div class="header_bottom">
+        <div
+          v-for="(n, i) in carouselImgArray.length"
+          :key="n"
+          class="my_circle"
+        >
+          <div :class="{ my_pointer: imageSelected === i }"></div>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -53,29 +55,45 @@ export default {
   },
   data: function () {
     return {
+      imageSelected: 0,
       carouselImgArray: [
-        {
-          id: "1",
-          image: "course-9-f-img.jpg",
-          visible: true,
-        },
-        {
-          id: "2",
-          image: "course-1-f-img.jpg",
-          visible: false,
-        },
-        {
-          id: "3",
-          image: "course-4-f-img.jpg",
-          visible: false,
-        },
+        "course-9-f-img.jpg",
+        "course-1-f-img.jpg",
+        "course-4-f-img.jpg",
+        "course-2-f-img.jpg",
       ],
     };
+  },
+  computed: {
+    bgImage() {
+      return {
+        backgroundImage: `url${require("../assets/img/" +
+          this.carouselImgArray[this.imageSelected])}`,
+      };
+    },
+  },
+  methods: {
+    increaseImageSelected: function () {
+      if (this.imageSelected < this.carouselImgArray.length - 1) {
+        this.imageSelected++;
+      } else {
+        this.imageSelected = 0;
+      }
+    },
+    autoNextImage: function () {
+      this.autoIncreaseImageSelected = setInterval(() => {
+        this.increaseImageSelected();
+      }, 2000);
+    },
+  },
+  created() {
+    // timing function che incrementa indice contenuto in imageSelected MA dentro le dimensioni dell'array
+    this.autoNextImage();
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
 @import "../styles/variables";
 .bg_Header {
@@ -196,8 +214,3 @@ export default {
 </style>
 
 
-<!-- v-for="image in carouselImgArray"
-        :key="image.id"
-        :style="{
-          'background-image': 'url(../assets/img/ ' + image.image + ')',
-        }" -->

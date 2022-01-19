@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <Header :navItemsArray="navItemsArray" />
-    <Main :iconsArray="iconsArray" />
+    <Main
+      :iconsArray="iconsArray"
+      :programsCourseArray="programsCourseArray"
+      :programsPointsArray="programsPointsArray"
+    />
   </div>
 </template>
 
@@ -44,7 +48,7 @@ export default {
           url: "#",
         },
       ],
-      // Icone del main top
+      // Icone delle card main top
       iconsArray: [
         {
           img: "h5-custom-icon-1.png",
@@ -69,6 +73,48 @@ export default {
         {
           img: "h5-custom-icon-6.png",
           text: "DIY&Craft",
+        },
+      ],
+      // Lista programmi del corso di Main
+      programsCourseArray: [
+        {
+          title: "What We Do",
+          status: true,
+        },
+        {
+          title: "Degree Programme",
+          status: false,
+        },
+        {
+          title: "Career Achievements",
+          status: false,
+        },
+        {
+          title: "Personal Managment",
+          status: false,
+        },
+        {
+          title: "Steps To Success",
+          status: false,
+        },
+        {
+          title: "Knowledge Transfer",
+          status: false,
+        },
+      ],
+      // Dettagli del programma del corso
+      programsPointsArray: [
+        {
+          point: "We enrich lives through learning.",
+        },
+        {
+          point: "Maximizing potential through individual attention.",
+        },
+        {
+          point: "The trusted name for specialized training.",
+        },
+        {
+          point: "People thach. People learn. This is where they connect.",
         },
       ],
     };
