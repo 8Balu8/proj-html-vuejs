@@ -21,48 +21,56 @@
         </p>
         <p class="my_more">LEARN MORE</p>
       </div>
+    </div>
 
-      <!-- Primo Jumbotron -->
-      <div class="students_image">
-        <img src="../assets/img/h5-img-1.jpg" alt="Image of students" />
-        <div class="top_page">
-          <i class="fas fa-angle-up"></i>
-          top
+    <!-- Primo Jumbotron -->
+    <div class="position-relative">
+      <div class="my_container">
+        <div class="students_image">
+          <img src="../assets/img/h5-img-1.jpg" alt="Image of students" />
         </div>
       </div>
+      <div class="top_page">
+        <i class="fas fa-angle-up"></i>
+        top
+      </div>
+    </div>
 
-      <!-- Secondo Jumbotron -->
-      <div class="globe_image">
-        <div class="my_globe">
-          <img src="../assets/img/h5-img-2.jpg" alt="Globe image" />
-        </div>
-        <div class="globe_txt">
-          <h2>
-            Empowering <br />
-            Children to Reach <br />
-            Their Potential
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-            accusamus, alias rerum expedita commodi illum consequuntur? Sapiente
-            consectetur vitae repellendus facere dolorem mollitia suscipit quae
-            ducimus, quasi ab veritatis officia!
-          </p>
-          <div class="globe_data_container">
-            <div class="globe_data">
-              <p>168</p>
-              <strong>User Stories</strong>
-            </div>
-            <div class="globe_data">
-              <p>347</p>
-              <strong>Events</strong>
+    <!-- Secondo Jumbotron -->
+    <div class="position-relative">
+      <div class="my_container">
+        <div class="globe_image">
+          <div class="my_globe">
+            <img src="../assets/img/h5-img-2.jpg" alt="Globe image" />
+          </div>
+          <div class="globe_txt">
+            <h2>
+              Empowering <br />
+              Children to Reach <br />
+              Their Potential
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
+              accusamus, alias rerum expedita commodi illum consequuntur?
+              Sapiente consectetur vitae repellendus facere dolorem mollitia
+              suscipit quae ducimus, quasi ab veritatis officia!
+            </p>
+            <div class="globe_data_container">
+              <div class="globe_data">
+                <p>168</p>
+                <strong>User Stories</strong>
+              </div>
+              <div class="globe_data">
+                <p>347</p>
+                <strong>Events</strong>
+              </div>
             </div>
           </div>
         </div>
-        <div class="top_page">
-          <i class="fas fa-angle-up"></i>
-          top
-        </div>
+      </div>
+      <div class="top_page">
+        <i class="fas fa-angle-up"></i>
+        top
       </div>
     </div>
 
@@ -89,47 +97,50 @@
     </div>
 
     <!-- Programs of course -->
-    <div class="my_container">
-      <div class="programs">
-        <div class="cells">
-          <div
-            v-for="(program, index) in programsCourseArray"
-            :key="index"
-            class="rows"
-          >
-            <div :class="{ active: program.status }"></div>
-            <p class="program_title">{{ program.title }}</p>
+    <div class="position-relative">
+      <div class="my_container">
+        <div class="programs">
+          <div class="cells">
+            <div
+              v-for="(program, index) in programsCourseArray"
+              :key="index"
+              class="rows"
+            >
+              <div :class="{ active: program.status }"></div>
+              <p class="program_title">{{ program.title }}</p>
+            </div>
+          </div>
+          <div class="program_description">
+            <h2>Learning Possibilities</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+              accusamus excepturi consequatur vel, amet optio temporibus nobis
+              reiciendis? Laudantium quaerat tempora, id natus quasi possimus
+              esse rem molestias ullam minima. Lorem ipsum dolor, sit amet
+              consectetur adipisicing elit. Autem consequatur odit repellat
+              accusantium iste modi. Adipisci facere doloremque aliquam debitis
+              magni? Neque ullam molestias mollitia ducimus deserunt eligendi
+              assumenda porro!
+            </p>
+            <ul class="program_points_list">
+              <li v-for="(point, index) in programsPointsArray" :key="index">
+                <i class="fas fa-check"></i>
+                {{ point.point }}
+              </li>
+            </ul>
+            <div class="icona">
+              <img
+                class="w-100"
+                src="../assets/img/h12-tabs-icon-1.png"
+                alt="icon"
+              />
+            </div>
           </div>
         </div>
-        <div class="program_description">
-          <h2>Learning Possibilities</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-            accusamus excepturi consequatur vel, amet optio temporibus nobis
-            reiciendis? Laudantium quaerat tempora, id natus quasi possimus esse
-            rem molestias ullam minima. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Autem consequatur odit repellat accusantium iste
-            modi. Adipisci facere doloremque aliquam debitis magni? Neque ullam
-            molestias mollitia ducimus deserunt eligendi assumenda porro!
-          </p>
-          <ul class="program_points_list">
-            <li v-for="(point, index) in programsPointsArray" :key="index">
-              <i class="fas fa-check"></i>
-              {{ point.point }}
-            </li>
-          </ul>
-          <div class="icona">
-            <img
-              class="w-100"
-              src="../assets/img/h12-tabs-icon-1.png"
-              alt="icon"
-            />
-          </div>
-        </div>
-        <div class="top_page">
-          <i class="fas fa-angle-up"></i>
-          top
-        </div>
+      </div>
+      <div class="top_page">
+        <i class="fas fa-angle-up"></i>
+        top
       </div>
     </div>
 
@@ -214,6 +225,7 @@ export default {
     background-color: $card_color;
     height: 250px;
     width: 200px;
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -225,7 +237,6 @@ export default {
 }
 // Primo Jumbotron
 .students_image {
-  position: relative;
   margin: 80px 0;
 }
 // Secondo Jumbotron
@@ -344,7 +355,7 @@ export default {
   border-top: 2px solid lightgray;
   border-bottom: 1px solid lightgray;
   background-image: url("../assets/img/background-pattern.jpg");
-  height: 1200px;
+  height: 1000px;
   position: relative;
   .images_course_container {
     display: flex;
@@ -355,6 +366,9 @@ export default {
       width: 300px;
       height: 400px;
       background-color: pink;
+      img {
+        width: 100%;
+      }
     }
   }
   .my_circle_special {

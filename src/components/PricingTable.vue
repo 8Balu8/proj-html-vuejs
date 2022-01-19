@@ -69,6 +69,17 @@
         </div>
       </div>
     </div>
+    <div class="top_page">
+      <i class="fas fa-angle-up"></i>
+      top
+    </div>
+    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+    <div class="special_circle">
+      <img
+        src="../assets/img/60699165_459440804828391_7177805742290763776_o.png"
+        alt="Circle Image"
+      />
+    </div>
   </div>
 </template>
 
@@ -153,6 +164,7 @@ export default {
 @import "../styles/variables";
 .box_table {
   border-bottom: 1px solid lightgray;
+  position: relative;
   .container_table_price {
     background-image: url("../assets/img/background-pattern.jpg");
     padding-bottom: 100px;
@@ -216,5 +228,37 @@ export default {
       }
     }
   }
+}
+.cart {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: red;
+  text-transform: uppercase;
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  top: 30%;
+}
+.special_circle {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  top: 25%;
 }
 </style>

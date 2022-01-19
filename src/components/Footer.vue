@@ -33,7 +33,7 @@
       </div>
       <div class="footer_bottom">
         <div>
-          <p>Copyrights 2017 ©Mikado Themes</p>
+          <p>Copyrights 2017 © Mikado Themes</p>
         </div>
         <div class="contacts">
           <p>CALL +44 300 303 0266</p>
