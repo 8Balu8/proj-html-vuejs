@@ -46,3 +46,14 @@ ul {
 .fa-check {
 	color: $my_secondary_color;
 }
+a {
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	&:hover {
+		text-decoration: none;
+		color: white;
+	}
+}

@@ -70,8 +70,10 @@
       </div>
     </div>
     <div class="top_page">
-      <i class="fas fa-angle-up"></i>
-      top
+      <a href="">
+        <i class="fas fa-angle-up"></i>
+        top
+      </a>
     </div>
     <div class="cart"><i class="fas fa-shopping-cart"></i></div>
     <div class="special_circle">
@@ -233,7 +235,7 @@ export default {
   width: 60px;
   height: 60px;
   cursor: pointer;
-  background-color: white;
+  background-color: $grid_color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,5 +262,16 @@ export default {
   position: absolute;
   right: 0;
   top: 25%;
+}
+a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
 }
 </style>

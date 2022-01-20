@@ -31,8 +31,10 @@
         </div>
       </div>
       <div class="top_page">
-        <i class="fas fa-angle-up"></i>
-        top
+        <a href="">
+          <i class="fas fa-angle-up"></i>
+          top
+        </a>
       </div>
     </div>
 
@@ -69,8 +71,10 @@
         </div>
       </div>
       <div class="top_page">
-        <i class="fas fa-angle-up"></i>
-        top
+        <a href="">
+          <i class="fas fa-angle-up"></i>
+          top
+        </a>
       </div>
     </div>
 
@@ -105,8 +109,8 @@
               v-for="(program, index) in programsCourseArray"
               :key="index"
               class="rows"
+              :class="{ active: program.status }"
             >
-              <div :class="{ active: program.status }"></div>
               <p class="program_title">{{ program.title }}</p>
             </div>
           </div>
@@ -139,8 +143,10 @@
         </div>
       </div>
       <div class="top_page">
-        <i class="fas fa-angle-up"></i>
-        top
+        <a href="">
+          <i class="fas fa-angle-up"></i>
+          top
+        </a>
       </div>
     </div>
 
@@ -311,12 +317,10 @@ export default {
       border: 3px solid $grid_color;
       display: flex;
       align-items: center;
-      :hover,
+      &:hover,
       .active {
         color: $my_secondary_color;
         border-left: 10px solid $my_secondary_color;
-        height: 100%;
-        padding-left: 20px;
         display: flex;
         align-items: center;
       }
@@ -388,6 +392,17 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    text-decoration: none;
+    color: white;
   }
 }
 </style>
