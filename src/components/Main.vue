@@ -109,9 +109,11 @@
               v-for="(program, index) in programsCourseArray"
               :key="index"
               class="rows"
-              :class="{ active: program.status }"
+              @click="program.status = !program.status"
             >
-              <p class="program_title">{{ program.title }}</p>
+              <p class="program_title" :class="{ active: program.status }">
+                {{ program.title }}
+              </p>
             </div>
           </div>
           <div class="program_description">
@@ -317,13 +319,14 @@ export default {
       border: 3px solid $grid_color;
       display: flex;
       align-items: center;
-      &:hover,
-      .active {
-        color: $my_secondary_color;
-        border-left: 10px solid $my_secondary_color;
+      p {
+        height: 100%;
+        margin-bottom: 0;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
       }
+
       .program_title {
         padding-left: 30px;
         font-weight: bold;
@@ -331,6 +334,12 @@ export default {
         font-size: 20px;
       }
     }
+  }
+  .active {
+    color: $my_secondary_color;
+    border-left: 10px solid $my_secondary_color;
+    display: flex;
+    align-items: center;
   }
   .program_description {
     width: 60%;
