@@ -37,6 +37,9 @@ ul {
 	border-radius: 50%;
 	border: 2px solid $my_primary_color;
 	margin: 0 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .zone_bottom {
 	display: flex;

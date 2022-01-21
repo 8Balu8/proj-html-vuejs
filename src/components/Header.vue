@@ -61,14 +61,22 @@ export default {
         "course-1-f-img.jpg",
         "course-4-f-img.jpg",
         "course-2-f-img.jpg",
+        "course-3-f-img.jpg",
+        "course-5-f-img.jpg",
+        "course-6-f-img.jpg",
+        "course-7-f-img.jpg",
+        "course-8-f-img.jpg",
+        "course-10-f-img.jpg",
+        "course-11-f-img.jpg",
+        "course-12-f-img.jpg",
       ],
     };
   },
   computed: {
     bgImage() {
       return {
-        backgroundImage: `url${require("../assets/img/" +
-          this.carouselImgArray[this.imageSelected])}`,
+        backgroundImage: `url(${require("../assets/img/" +
+          this.carouselImgArray[this.imageSelected])})`,
       };
     },
   },
@@ -99,9 +107,10 @@ export default {
 .bg_Header {
   width: 100%;
   height: 900px;
-  background-image: url("../assets/img/course-9-f-img.jpg");
+  // background-image: url("../assets/img/course-9-f-img.jpg");
   background-size: cover;
   background-position: center;
+  transition: 1700ms;
 
   .header_top {
     display: flex;
@@ -128,11 +137,12 @@ export default {
         a {
           text-decoration: none;
           text-transform: uppercase;
-          color: white;
+          color: gray;
           font-size: 20px;
 
           &:hover {
             font-weight: bold;
+            color: white;
           }
         }
       }
@@ -210,6 +220,12 @@ export default {
     justify-content: center;
     align-items: flex-end;
   }
+}
+.my_pointer {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: $my_primary_color;
 }
 </style>
 
